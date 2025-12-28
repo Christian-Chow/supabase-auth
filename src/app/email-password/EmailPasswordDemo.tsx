@@ -3,6 +3,7 @@
 import { getSupabaseBrowserClient } from "../../lib/supabase/browser-client"
 import { User } from "@supabase/supabase-js"
 import {useState} from "react";
+import { useRouter } from "next/navigation";
 
 type EmailPasswordDemoProps = {
   user: User | null;
@@ -12,6 +13,7 @@ type Mode = "signup" | "signin"
 
 
 export function EmailPasswordDemo({ user }: EmailPasswordDemoProps) {
+    const router = useRouter();
     const [mode, setMode] = useState<Mode>("signin");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -53,6 +55,9 @@ export function EmailPasswordDemo({ user }: EmailPasswordDemoProps) {
                 } else {
                     setStatus("Sign in successful!");
                     console.log('Sign in successful:', data);
+                    // Navigate to welcome page after successful sign-in
+                    router.push("/welcome");
+                    router.refresh();
                 }
             }
         } catch (err: any) {
