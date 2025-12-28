@@ -31,17 +31,17 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* Other Auth Method */}
+          {/* Google OAuth Auth */}
           <Link
-            href="/oauth"
+            href="/google-login"
             className="group relative block p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-200 border border-gray-200 hover:border-indigo-400 hover:-translate-y-0.5"
           >
             <div className="text-center">
               <h3 className="text-base font-semibold text-gray-900 mb-1">
-                OAuth / Social
+                Google
               </h3>
               <p className="text-xs text-gray-500">
-                Sign in with social
+                Sign in with Google
               </p>
             </div>
           </Link>

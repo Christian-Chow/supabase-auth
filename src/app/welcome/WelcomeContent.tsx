@@ -22,7 +22,7 @@ export function WelcomeContent({ user }: WelcomeContentProps) {
             if (error) {
                 console.error('Sign out error:', error);
             } else {
-                router.push("/email-password");
+                router.push("/");
                 router.refresh();
             }
         } catch (err) {
